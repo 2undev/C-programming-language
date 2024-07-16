@@ -140,3 +140,87 @@ int main() {
 // Hello World!
 
 // Congratulations! You have written and executed your first C program.
+
+
+
+
+
+
+// C Syntax >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Syntax
+// You have already seen the following code a couple of times in the first chapters. Let's break it down to understand it better:
+
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!");
+  return 0;
+}
+
+
+// #include <stdio.h> is a header file library that lets us work with input and output functions, such as printf() (used in line 157). Header files add functionality to C programs.
+// Line 155: A blank line. C ignores white space. But we use it to make the code more readable.
+// Line 156: Another thing that always appear in a C program is main(). This is called a function. Any code inside its curly brackets {} will be executed.
+// Line 157: printf() is a function used to output/print text to the screen. In our example, it will output "Hello World!".
+// Line 158: return 0 ends the main() function.
+// Line 159: Do not forget to add the closing curly bracket } to actually end the main function.
+
+
+// Note that: Every C statement ends with a semicolon ;
+
+// Note: The body of int main() could also been written as:
+
+int main(){printf("Hello World!");return 0;}
+
+// Remember: The compiler ignores white spaces. However, multiple lines makes the code more readable.
+
+
+
+
+
+
+
+
+// C Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Statements
+// A computer program is a list of "instructions" to be "executed" by a computer.
+
+// In a programming language, these programming instructions are called statements.
+
+// The following statement "instructs" the compiler to print the text "Hello World" to the screen:
+
+
+// printf("Hello World!");
+
+
+// It is important that you end the statement with a semicolon ;
+
+// If you forget the semicolon (;), an error will occur and the program will not run:
+
+// if you run this code below you should get an error message because the program did not end with a semicolon
+
+// printf("Hello World!")
+// error: expected ';' before 'return'
+
+
+
+
+// Many Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Most C programs contain many statements.
+
+// The statements are executed, one by one, in the same order as they are written:
+
+// printf("Hello World!");
+// printf("Have a good day!");
+// return 0;
+
+
+// Example explained
+// From the example above, we have three statements:
+
+// The first statement is executed first (print "Hello World!" to the screen).
+// Then the second statement is executed (print "Have a good day!" to the screen).
+// And at last, the third statement is executed (end the C program successfully).
