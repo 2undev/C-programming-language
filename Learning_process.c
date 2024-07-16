@@ -146,7 +146,7 @@ int main() {
 
 
 
-// C Syntax >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// C Syntax >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // Syntax
 // You have already seen the following code a couple of times in the first chapters. Let's break it down to understand it better:
@@ -182,7 +182,7 @@ int main(){printf("Hello World!");return 0;}
 
 
 
-// C Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// C Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // Statements
 // A computer program is a list of "instructions" to be "executed" by a computer.
@@ -206,8 +206,7 @@ int main(){printf("Hello World!");return 0;}
 
 
 
-
-// Many Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Many Statements >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // Most C programs contain many statements.
 
@@ -224,3 +223,129 @@ int main(){printf("Hello World!");return 0;}
 // The first statement is executed first (print "Hello World!" to the screen).
 // Then the second statement is executed (print "Have a good day!" to the screen).
 // And at last, the third statement is executed (end the C program successfully).
+
+
+
+
+
+
+
+// C Output (Print Text)>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// To output values or print text in C, you can use the printf() function:
+
+// Example
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!");
+  return 0;
+}
+
+
+
+
+// Double Quotes >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// When you are working with text, it must be wrapped inside double quotations marks "".
+
+// If you forget the double quotes, an error occurs:
+
+// Example
+// printf("This sentence will work!"); // "This code will work!"
+
+// printf(This sentence will produce an error.);  // this code will produce an error because the text is not wrapped inside double quotes.
+
+
+
+
+
+// Many printf Functions >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// You can use as many printf() functions as you want. However, note that it does not insert a new line at the end of the output:
+
+// Example
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!");
+  printf("I am learning C.");
+  printf("And it is awesome!");
+  return 0;
+}
+
+
+
+
+
+// C New Lines >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+// To insert a new line, you can use the \n character:
+
+// Example
+
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\n");
+  printf("I am learning C.");
+  return 0;
+}
+
+
+// You can also output multiple lines with a single printf() function. However, this could make the code harder to read:
+
+// Example
+
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\nI am learning C.\nAnd it is awesome!");
+  return 0;
+}
+
+
+// Tip: Two \n characters after each other will create a blank line: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Example
+
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\n\n");
+  printf("I am learning C.");
+  return 0;
+}
+
+
+
+// What is \n exactly? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// The newline character (\n) is called an escape sequence, and it forces the cursor to change its position to the beginning of the next line on the screen. This results in a new line.
+
+// Examples of other valid escape sequences are:
+
+// Escape       Sequence	Description
+
+// \t	         Creates a horizontal tab/ space	
+// \\	         Inserts a backslash character (\)	
+// \"	         Inserts a double quote character
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
