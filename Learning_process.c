@@ -58,7 +58,7 @@
 
 // Open Codeblocks and go to File > New > Empty File.
 
-// Write the following C code and save the file as myfirstprogram.c 
+// Write the following C code and save the file as learning_process.c 
 
 #include <stdio.h>
 
@@ -68,6 +68,73 @@ int main() {
 }
 
 // Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. For now, focus on how to run the code.
+
+// Follow this instruction to compile and run your code.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// -- open your terminal and navigate to the directory folder where the code or project is located using this command like this:  cd "/path/to/your/source/code/"
+
+// -- once you are in the directory folder where the code or project is located use this command to compile your code like this:   gcc -o learning_process learning_process.c
+
+// -- then use ./ followed by the project name anytime you want to run the compiled program like this:   ./learning_process
+
+
+
+
+
+
+// Step-by-Step Explanation
+
+// 1. Changing the Directory:    cd "/path/to/your/source/code/"
+
+// The `cd` command stands for "change directory." This command is used to change the current working directory to the specified path. In this example, `"/path/to/your/source/code/"` is a placeholder for the actual path where your source code file (`learning_process.c`) is located. You need to replace this with the actual path on your system.
+
+
+// - Example:
+// cd "/Users/2nde/Desktop/MIVA/Computer Science/100 L/C Programing Language/"
+     
+
+
+
+
+// 2. Compiling the C Program:    gcc -o learning_process learning_process.c
+
+
+// The `gcc` command stands for "GNU Compiler Collection." This command is used to compile C (and other languages) programs. Here's a breakdown of the options and arguments:
+
+//  - `gcc`: The command to invoke the GCC compiler.
+//  - `-o learning_process`: This option specifies the name of the output file (the compiled executable). In this case, the output file will be named `learning_process`. meaning that is the name you will be using to run the program
+//  - `learning_process.c`: This is the name of the source code file you want to compile. It should contain your C code. this is your source code file. the file you want to compile
+ 
+//  When you run this command, GCC will compile the `learning_process.c` file and create an executable file named `learning_process` in the same directory.
+
+
+
+
+
+// 3. Running the Compiled Program:    ./learning_process
+
+// The `./` before `learning_process` indicates that you want to run an executable file located in the current directory. The `learning_process` is the name of the executable file that was created by the GCC compiler in the previous step.
+
+
+// When you run this command, the operating system will execute the `learning_process` program, and you should see the output of your C program in the terminal.
+
+
+
+
+
+// Summary
+
+// - cd "/path/to/your/source/code/": Changes the current working directory to the location of your source code.
+// - gcc -o learning_process learning_process.c: Compiles the C source code file `learning_process.c` and produces an executable named `learning_process`.
+// - ./learning_process: Runs the compiled executable program.
+
+// This sequence of commands is a common workflow for compiling and running a C program from the command line. 
+// Make sure to replace `"/path/to/your/source/code/"` with the actual path to your source code directory on your system.
+
+
+
+
+
 // now run the code and you should get this output.
 
 // Hello World!
