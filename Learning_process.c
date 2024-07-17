@@ -588,7 +588,6 @@ int main()
 // To print different types in a single printf() function, you can use the following: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // Example
-#include <stdio.h>
 
 int main()
 {
@@ -614,7 +613,6 @@ int main()
 // You can also just print a value without storing it in a variable, as long as you use the correct format specifier:
 
 // Example
-#include <stdio.h>
 
 int main()
 {
@@ -641,7 +639,6 @@ int main()
 // If you assign a new value to an existing variable, it will overwrite the previous value:
 
 // Example
-#include <stdio.h>
 
 int main()
 {
@@ -666,7 +663,6 @@ int main()
 // You can also assign the value of one variable to another : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // Example
-#include <stdio.h>
 
 int main()
 {
@@ -873,3 +869,62 @@ printf("Length is: %d\n", length);
 printf("Width is: %d\n", width);
 printf("Area of the rectangle is: %d", area);
 }
+
+
+
+
+
+
+
+
+
+// Data Types >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// As explained in the Variables chapter, a variable in C must be a specified data type, and you must use a format specifier inside the printf() function to display it:
+
+// Example
+
+int main(){
+// Create variables
+int myNum = 5;             // Integer (whole number)
+float myFloatNum = 5.99;   // Floating point number
+char myLetter = 'D';       // Character
+
+// Print variables
+printf("%d\n", myNum);
+printf("%f\n", myFloatNum);
+printf("%c\n", myLetter);
+}
+
+
+// Basic Data Types >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// The data type specifies the size and type of information the variable will store.
+
+// In this tutorial, we will focus on the most basic ones:
+
+// DataType >>>>>>	  Size >>>>>>>	        Description >>>>>>>>>                                                                                              Example >>>>>>>>
+// int	              2 or 4 bytes	        Stores whole numbers, without decimals	                                                                             1
+// float	            4 bytes	              Stores fractional numbers, containing one or more decimals. Sufficient for storing 6-7 decimal digits	               1.99
+// double	            8 bytes	              Stores fractional numbers, containing one or more decimals. Sufficient for storing 15 decimal digits	               1.99
+// char	              1 byte	              Stores a single character/letter/number, or ASCII values	                                                           'A'
+
+
+// Basic Format Specifiers >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// There are different format specifiers for each data type. Here are some of them:
+
+
+// Format Specifier >>>>>>>>>	       Data Type >>>>>>>>>>>>>
+// %d or %i	                          int	
+// %f or %F	                          float	
+// %lf	                              double	
+// %c	                                char	
+// %s	                                Used for strings (text), which i will learn more about in a later chapter	
+
+
+// Note: It is important that you use the correct format specifier for the specified data type, or the program may produce errors or even crash.
+
+
+
+
