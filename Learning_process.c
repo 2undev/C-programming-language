@@ -66,25 +66,328 @@
 
 
 
+// C - Program Structure >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// C Quickstart
-// Let's create our first C file.
+// A typical program in C language has certain mandatory sections and a few optional sections, depending on the program's logic, complexity, and readability. 
+// Normally a C program starts with one or more preprocessor directives (#include statements) and must have a main() function that serves as the entry point of the program. 
+// In addition, there may be global declarations of variables and functions, macros, other user-defined functions, etc.
 
-// Open Codeblocks and go to File > New > Empty File.
 
-// Write the following C code and save the file as learning_process.c
+
+
+// The Preprocessor Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// The C compiler comes with several library files, having ".h" as an extension. A ".h" file (called a "header file") 
+// consists of one or more predefined functions (also called "library functions") to be used in the C program.
+
+// The library functions must be loaded in any C program. The "#include" statement is used to include a header file. It is a "preprocessor directive".
+
+// For example, printf() and scanf() functions are needed to perform console I/O operations.
+// They are defined in the stdio.h file. Hence, you invariably find #include <stdio.h> statement at the top of any C program. 
+
+
+// Other important and frequently used header files include >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// string.h, 
+// math.h, 
+// stdlib.h, etc.
+
+
+
+
+// There are other preprocessor directives such as >>>>>>>>>>>>>>>>>>>>>>>>>>>>  
+
+// #define which is used to define constants and macros and 
+// #ifdef is used for conditional definitions.
+
+// The following statement defines a constant PI
+
+// #define PI 3.14159
+
+// Example
+// Once a constant is defined, it can be used in the rest of the C program.
 
 #include <stdio.h>
 
-int main()
-{
-  printf("Hello World!");
-  return 0;
+#define PI 3.14159
+
+int main(){
+ int radius = 5;
+ float area = PI*radius*radius;
+ printf("Area: %f", area);
+
+ return 0;
 }
 
-// Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. For now, focus on how to run the code.
+// Output
+// On executing this code, you will get the following output 
+// Area: 78.539749
 
-// Follow this instruction to compile and run your code.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+// You can also define a macro with the "#define" directive. >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// It is similar to a function in C. 
+// We can pass one or more arguments to the macro name and perform the actions in the code segment.
+
+// The following code defines AREA macro using the #define statement 
+// Example
+
+#include <stdio.h>
+#define PI 3.14159
+#define AREA(r) (PI*r*r)
+
+int main(){
+ int radius = 5;
+ float area = AREA(radius);
+ printf("Area: %f", area);
+ return 0;
+}
+
+
+// Output
+// Area: 78.539749
+
+// Macros are generally faster in execution than the functions.
+
+
+
+
+
+// The main() Function >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// A C program is a collection of one or more functions. 
+
+// There are two types of functions in a C program: 
+
+// 1-- library functions. 
+// 2-- user-defined functions.
+
+// There must be at least one user-defined function in a C program, whose name must be main(). >>>>>>>>>>>>>>>>>>>>>
+
+// The main() function serves as the entry point of the program. When the program is run, the compiler looks for the main() function.
+// The main() function contains one or more statements. 
+// By default, each statement must end with a semicolon. 
+// The statement may include variable declarations, decision control or loop constructs or call to a library or another user-defined function.
+
+
+// In C, a function must have a data type. >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// The data type of return value must match with the data type of the function. 
+// By default, a function in C is of int type. Hence, if a function doesn't have a return statement, its type is int, and you may omit it in the function definition, 
+// but the compiler will issues a warning like this
+
+// warning: return type defaults to 'int'
+
+
+// Example
+// A typical example of main() function is as follows 
+
+#include <stdio.h>
+int main() {
+ /* my first program in C */
+ printf("Hello, World! \n");
+ return 0;
+}
+
+
+// Output
+// On executing this code, you will get the following output 
+// Hello, World!
+
+
+
+// The Global Declaration Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// This section consists of declaration of variables to be used across all the functions in a program. 
+// Forward declarations of user-defined functions defined later in the program as well as user-defined data types are also present in the global section.
+
+
+// Example of global variable declaration 
+
+int total = 0;
+float average = 0.0;
+
+
+
+// Example of forward declaration of a function 
+
+float area(float height, float width);
+
+
+
+
+
+// Subroutines in a C Program >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// There may be more than one user-defined functions in a C program. 
+// Programming best practices require that the programming logic be broken down to independent and reusable functions in a structured manner.
+
+// Depending on the requirements, a C program may have one or more user-defined functions, which may be called from the main() function or any other user-defined function as well.
+
+
+
+
+
+
+
+
+// Structure of the C Program >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// The following code shows the different sections in a C program 
+
+// /*Headers*/ >>>>>>>>>>>>>>
+#include <stdio.h>
+#include <math.h>
+
+// /*forward declaration*/ >>>>>>>>>>>>
+float area_of_square(float);
+
+// /*main function*/ >>>>>>>>>>>>
+int main() {
+ /* my first program in C */
+ float side = 5.50;
+ float area = area_of_square(side);
+ printf ("Side=%5.2f Area=%5.2f", side, area);
+ return 0;
+}
+
+// /*subroutine*/ >>>>>>>>>>>>
+float area_of_square(float side){
+ float area = pow(side,2);
+ return area;
+}
+
+
+
+// Output
+// On executing this code, you will get the following output 
+
+
+
+
+
+
+
+
+
+
+
+// C Quickstart >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Let's create our first C file.
+
+
+// Every learner aspiring to become a professional software developer starts with writing a Hello World program in the programming language he/she is learning. 
+// In this chapter, we shall learn how to write a Hello World program in C language.
+
+
+
+// Hello World in C Language >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Before writing the Hello World program, make sure that you have the C programming environment set up in your computer. 
+// This includes the GCC compiler, a text editor, and preferably an IDE for C programming such as CodeBlocks.
+
+
+// Example
+// The first step is to write the source code for the Hello World program. >>>>>>>>>>>>>>>>>>>>>>
+
+// Open a text editor on your computer. On Windows, open Notepad or Notepad++, enter the following code and save it as "hello.c".
+
+
+#include <stdio.h>
+
+int main(){
+ /* my first program in C */
+ printf("Hello World! \n");
+
+ return 0;
+}
+
+// Output
+// Run the code and check its output
+// Hello World!
+
+
+
+
+// The Step-by-Step Execution of a C Program >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// Let us understand how the above program works in a step-by-step manner.
+
+// Step 1 >>>>>>>>>>>>>>>>>>>>
+// The first statement in the above code is the #include statement that imports the stdio.h file in the current C program. 
+// This is called a preprocessor directive. 
+
+// This header file contains the definitions of several library functions used for stand IO operations. 
+// Since we shall be calling the printf() function which is defined in the stdio.h library, we need to include it in the first step.
+
+
+// Step 2 >>>>>>>>>>>>>>>>>>>>>>>
+// Every C program must contain a main() function. 
+// The main() function in this program prints the "Hello World" message on the console terminal.
+
+// Inside the main() function, we have inserted a comment statement that is ultimately ignored by the compiler; it is for the documentation purpose.
+
+// The next statement calls the printf() function. In C, every statement must terminate with a semicolon symbol (;), failing which the compiler reports an error.
+// The printf() function, imported from the stdio.h library file, echoes the Hello World string to the standard output stream. 
+
+
+// In case of Windows, the standard output stream is the Command prompt terminal and in case of Linux it is the Linux terminal.
+
+// In C, every function needs to have a return value. 
+// If the function doesn't return anything, its value is void. 
+// In the example above, the main() function has int as its return value. 
+// Since the main() function doesn't need to return anything, it is defined to return an integer "0". 
+
+// The "return 0" statement also indicates that the program has been successfully compiled and run. 
+
+
+// Step 3>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+// Next, we need to compile and build the executable from the source code ("hello.c").
+// If you are using Windows, open the command prompt in the folder in which "hello.c" has been saved. 
+
+// The following command compiles the source code >>>>>>>>>>>>>>
+// gcc -c hello.c -o hello.o
+// The -c option specifies the source code file to be compiled. This will result in an object file with the name hello.o if the C program doesn't have any errors. 
+
+// If it contains errors, they will be displayed. For example, if we forget to put the semicolon at the end of the printf() statement, the compilation result will show the following error:
+
+// helloworld.c: In function 'main':
+// helloworld.c:6:30: error: expected ';' before 'return'
+//  printf("Hello, World! \n")
+//                            ^
+//                            ;
+// helloworld.c:8:4:
+//  return 0;
+
+
+
+
+// To build an executable from the compiled object file, use the following command: >>>>>>>>>>>>>>>
+// gcc -o hello.exe hello.o
+
+// The hello.exe is now ready to be run from the command prompt that displays the Hello
+// World message in the terminal like this: >>>
+
+// C:\Users\user>hello
+// Hello World!
+
+
+// On Ubuntu Linux, the object file is first given executable permission before running it by prefixing "./" to it. like this:
+
+// $ chmod a+x a.o
+// $ ./a.o
+
+// You can also use an IDE such as CodeBlocks to enter the code, edit, debug and run the Hello World program more conveniently.
+
+
+
+
+
+
+// Follow this instruction to compile and run your code on mac os.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 // -- open your terminal and navigate to the directory folder where the code or project is located using this command like this:  cd "/path/to/your/source/code/"
 
@@ -101,7 +404,7 @@ int main()
 
 
 // - Example:
-// cd "/Users/2nde/Desktop/MIVA/Computer Science/100 L/C Programing Language/"
+// cd "/Users/2nde/Desktop/MIVA/Computer Science/100 L/C Programming Language/"
 
 
 // 2. Compiling the C Program:    gcc -o learning_process learning_process.c
@@ -143,6 +446,151 @@ int main()
 
 
 
+// Compilation Process in C >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// C is a compiled language. Compiled languages provide faster execution performance as compared to interpreted languages. 
+// Different compiler products may be used to compile a C program. They are GCC, Clang, MSVC, etc. In this chapter, we will explain what goes in the background when you compile a C program using GCC compiler.
+
+
+
+// Compiling a C Program >>>>>>>>>>>>
+// A sequence of binary instructions consisting of 1 and 0 bits is called as machine code.
+// High-level programming languages such as C, C++, Java, etc. consist of keywords that arecloser to human languages such as English. Hence, a program written in C (or any other high-level language) needs to be converted to its equivalent machine code. 
+// This process is called compilation.
+
+
+// Note that the machine code is specific to the hardware architecture and the operating system. 
+// In other words, the machine code of a certain C program compiled on a computer with Windows OS will not be compatible with another computer using Linux OS. Hence, we must use the compiler suitable for the target OS.
+
+
+// C Compilation Process Steps >>>>>>>>>>>>>>>>
+// In this tutorial, we will be using the gcc (which stands for GNU Compiler Collection). 
+// The GNU project is a free-software project by Richard Stallman that allows developers to have access to powerful tools for free.
+// The gcc compiler supports various programming languages, including C. In order to use it, we should install its version compatible with the target computer.
+
+
+// The compilation process has four different steps:
+// The following diagram illustrates the compilation process.
+
+// -- Preprocessing
+// -- Compiling
+// -- Assembling
+// -- Linking
+
+// Example
+// To understand this process, let us consider the following source code in C language (main.c)
+
+#include <stdio.h>
+int main(){
+ /* my first program in C */
+ printf("Hello World! \n");
+
+ return 0;
+}
+
+
+// Output
+// Run the code and check its output
+// Hello World!
+
+
+// The ".c" is a file extension that usually means the file is written in C. 
+
+// The first line is the preprocessor directive "#include" that tells the compiler to include the "stdio.h" header file.
+
+// The text inside /* and */ are comments and these are useful for documentation purpose.
+
+// The entry point of the program is the "main() function". It means the program will start by executing the statements that are inside this function’s block. 
+// Here, in the given program code, there are only two statements: one that will print the sentence "Hello World" on the terminal, and another statement that tells the program to "return 0" if it exited or ended correctly. 
+
+// So, once we compiled it, if we run this program we will only see the phrase "Hello World" appearing.
+
+
+
+// What Goes Inside the C Compilation Process? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// In order for our "main.c" code to be executable, we need to enter the command "gcc main.c", and the compiling process will go through all of the four steps it contains.
+
+// Step 1: Preprocessing >>>>>>>>>>>>>>>>>>>>>>>>>>
+// The preprocessor performs the following actions:
+// It removes all the comments in the source file(s).
+// It includes the code of the header file(s), which is a file with extension .h which contains C function declarations and macro definitions.
+
+// The output of this step will be stored in a file with a ".i" extension, so here it will be in "main.i".
+// In order to stop the compilation right after this step, we can use the option "-E" with the gcc command on the source file, and press Enter like this:
+
+// gcc -E main.c
+
+
+
+
+// Step 2: Compiling >>>>>>>>>>>>>>>>>>>
+// The compiler generates the IR code (Intermediate Representation) from the preprocessed file, so this will produce a ".s" file. That being said, other compilers might produce assembly code at this step of compilation.
+// We can stop after this step with the "-S" option on the gcc command, and press Enter like this:
+
+// gcc -S main.c
+
+
+// This is what the main.s file should look like:
+
+// .file "helloworld.c"
+//    .text
+//    .def __main; .scl 2; .type 32; .endef
+//    .section .rdata,"dr"
+// .LC0:
+//    .ascii "Hello, World! \0"
+//    .text
+//    .globl main
+//    .def main; .scl 2; .type 32; .endef
+//    .seh_proc main
+// main:
+//    pushq %rbp
+//    .seh_pushreg %rbp
+//    movq %rsp, %rbp
+//    .seh_setframe %rbp, 0
+//    subq $32, %rsp
+//    .seh_stackalloc 32
+//    .seh_endprologue
+//    call __main
+//    leaq .LC0(%rip), %rcx
+//    call puts
+//    movl $0, %eax
+//    addq $32, %rsp
+//    popq %rbp
+//    ret
+//    .seh_endproc
+//    .ident "GCC: (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
+//    .def puts; .scl 2; .type 32; .endef
+
+
+
+
+// Step 3: Assembling >>>>>>>>>>>>>>>>>>>>>
+// The assembler takes the IR code and transforms it into object code, that is code in machine language (i.e. binary). This will produce a file ending in ".o".
+// We can stop the compilation process after this step by using the option "-c" with the gcc command, and pressing Enter.
+
+// Note that the "main.o" file is not a text file, hence its contents won't be readable when you open this file with a text editor.
+
+
+
+
+// Step 4: Linking >>>>>>>>>>>>>>>>>>>>>
+// The linker creates the final executable, in binary. It links object codes of all the source files together. 
+// The linker knows where to look for the function definitions in the static libraries or the dynamic libraries.
+
+// Static libraries are the result of the linker making a copy of all the used library functions to the executable file. 
+// The code in dynamic libraries is not copied entirely, only the name of the library is placed in the binary file.
+
+// By default, after this fourth and last step, that is when you type the whole "gcc main.c" command without any options, the compiler will create an executable program called main.out (or main.exe in case of Windows) that we can run from the command line.
+
+// We can also choose to create an executable program with the name we want, by adding the "-o" option to the gcc command, placed after the name of the file or files we are compiling. like this:
+
+// gcc main.c -o hello.out
+
+// So now we could either type "./hello.out" if you didn't use the "-o" option or "./hello" to execute the compiled code. The output will be "Hello World" and following it, the shell prompt will appear again.
+
+
+
+
 
 
 
@@ -158,6 +606,7 @@ int main()
 int main()
 {
   printf("Hello World!");
+
   return 0;
 }
 
@@ -275,6 +724,7 @@ int main(){printf("Hello World!"); return 0;}
 int main()
 {
   printf("Hello World!");
+
   return 0;
 }
 
@@ -303,6 +753,7 @@ int main()
   printf("Hello World!");
   printf("I am learning C.");
   printf("And it is awesome!");
+
   return 0;
 }
 
@@ -316,6 +767,7 @@ int main()
 {
   printf("Hello World!\n");
   printf("I am learning C.");
+
   return 0;
 }
 
@@ -326,6 +778,7 @@ int main()
 int main()
 {
   printf("Hello World!\nI am learning C.\nAnd it is awesome!");
+
   return 0;
 }
 
@@ -337,6 +790,7 @@ int main()
 {
   printf("Hello World!\n\n");
   printf("I am learning C.");
+
   return 0;
 }
 
@@ -362,56 +816,49 @@ int main()
 
 
 
-// Comments in C >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Comments in C >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// Comments can be used to explain code, and to make it more readable. It can also be used to prevent execution when testing alternative code.
+// Comments in a C Program
 
-// Comments can be singled-lined or multi-lined.
+// Apart from the programming elements of a C program such as variables, structures, loops, functions, etc., the code may have a certain text inside "/* .. */" recognized as comments.
+// Such comments are ignored by the compiler.
+// Inserting comments in the code often proves to be helpful in documenting the program, and in understanding as well as debugging the programming logic and errors.
+// If the /* symbol doesn’t have a matching */ symbol, the compiler reports an error like the one below
 
-// Single-line Comments >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// Single-line comments start with two forward slashes (//).
-
-// Any text between // and the end of the line is ignored by the compiler (will not be executed).
-
-// This example uses a single-line comment before a line of code:
-
-// Example
-
-// This is a comment
-
-int main()
-{
-  printf("Hello World!");
-}
-
-// This example uses a single-line comment at the end of a line of code:
-
-// Example
-
-int main()
-{
-  printf("Hello World!"); // This is a comment
-}
-
-
-
+// "Unterminated comment".
 
 
 // C Multi-line Comments >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-// Multi-line comments start with /* and ends with */.
+// A text between /* and */ is called as C-style comment, and is used to insert multi-line comments like this:
 
-// Any text between /* and */ will be ignored by the compiler:
+/*
+Program to display Hello World
+Author: Tutorialspoint
+Built with codeBlocks
+*/
 
-// Example
 
-/* The code below will print the words Hello World! to the screen, and it is amazing */
 
-int main()
-{
-  printf("Hello World!");
-}
+// Single-line Comments >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+// A single line comment starts with a double forward-slash (//) 
+// and ends with a new line. meaning a valid code must start on a new line not on same line as the commented line of code.
+
+
+// It may appear after a valid C statement also like this
+
+int age = 20; // variable to store age
+
+
+
+// However, a valid statement can't be given in a line that starts with "//". Hence, the
+// following statement is erroneous:
+
+// Variable to store age. int age=20;
+
+
+
 
 // Single or multi-line comments?
 // It is up to you which you want to use. Normally, we use // for short comments, and /* */ for longer.
@@ -501,6 +948,8 @@ myNum = 15;
 int main()
 {
   printf("Hello World!");
+
+  return 0;
 }
 
 // In many other programming languages (like Python, Java, and C++), you would normally use a print function to display the value of a variable. However, this is not possible in C:
@@ -511,6 +960,8 @@ int main()
 {
   int myNum = 15;
   printf(myNum); // Nothing happens
+
+  return 0;
 }
 
 // To output variables in C, you must get familiar with something called "format specifiers",
@@ -538,6 +989,8 @@ int main()
 {
   int myNum = 15;
   printf("%d", myNum); // Outputs 15
+
+  return 0;
 }
 
 
@@ -561,6 +1014,8 @@ int main()
   printf("%d\n", myNum);
   printf("%f\n", myFloatNum);
   printf("%c\n", myLetter);
+
+  return 0;
 }
 
 
@@ -576,6 +1031,8 @@ int main()
 {
   int myNum = 15;
   printf("My favorite number is: %d", myNum);
+
+  return 0;
 }
 
 
@@ -595,6 +1052,8 @@ int main()
   char myLetter = 'D';
 
   printf("My number is %d and my letter is %c", myNum, myLetter);
+
+  return 0;
 }
 
 // You will learn more about Data Types in a later chapter.
@@ -618,6 +1077,8 @@ int main()
 {
   printf("My favorite number is: %d", 15);
   printf("My favorite letter is: %c", 'D');
+
+  return 0;
 }
 
 // However, it is more sustainable to use variables as they are saved for later and can be re-used whenever.
@@ -646,6 +1107,8 @@ int main()
   myNum = 10;     // Now myNum is 10
 
   printf("%d", myNum);
+
+  return 0;
 }
 
 
@@ -675,6 +1138,8 @@ int main()
 
   // myNum is now 23, instead of 15
   printf("%d", myNum);
+
+  return 0;
 }
 
 
@@ -703,6 +1168,8 @@ myOtherNum = myNum;
 
 // myOtherNum now has 15 as a value
 printf("%d", myOtherNum);
+
+return 0; 
 }
 
 
@@ -733,6 +1200,8 @@ int main(){
   int sum = x + y;
 
   printf("%d", sum);
+
+  return 0;
 }
 
 
@@ -756,11 +1225,9 @@ int main(){
 int x = 5; y = 6; z = 50;
 
 printf("%d", x + y + z);
+
+return 0;
 }
-
-
-
-
 
 
 
@@ -777,6 +1244,8 @@ int x, y, z;
 x = y = z = 50;
 
 printf("%d", x + y + z);
+
+return 0;
 }
 
 
@@ -843,6 +1312,8 @@ printf("Student id: %d\n", studentID);
 printf("Student age: %d\n", studentAge);
 printf("Student fee: %f\n", studentFee);
 printf("Student grade: %c", studentGrade);
+
+return 0;
 }
 
 
@@ -868,6 +1339,8 @@ area = length * width;
 printf("Length is: %d\n", length);
 printf("Width is: %d\n", width);
 printf("Area of the rectangle is: %d", area);
+
+return 0;
 }
 
 
@@ -894,6 +1367,8 @@ char myLetter = 'D';       // Character
 printf("%d\n", myNum);
 printf("%f\n", myFloatNum);
 printf("%c\n", myLetter);
+
+return 0;
 }
 
 
